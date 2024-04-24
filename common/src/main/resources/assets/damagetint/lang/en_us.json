@@ -1,0 +1,10 @@
+{
+  "damagetint.title": "DamageTint",
+  "damagetint.config.general.title": "General",
+  "damagetint.config.enabled": "Enabled",
+  "damagetint.config.enabled.tooltip": "Enables/Disables the mod",
+  "damagetint.config.color": "Tint Color",
+  "damagetint.config.color.tooltip": "The color of the tint",
+  "damagetint.config.showOnArmor.enabled": "Show on Armor",
+  "damagetint.config.showOnArmor.enabled.tooltip": "Show the tint on armor"
+}
