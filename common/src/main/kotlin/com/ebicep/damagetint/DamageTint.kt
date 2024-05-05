@@ -26,11 +26,7 @@ object DamageTint {
     }
 
     private fun isEnabled(): Boolean {
-        return Config.values.enabled
-    }
-
-    fun showOnArmor(): Boolean {
-        return isEnabled() && Config.values.showOnArmor
+        return Config.values.overrideVanillaColor
     }
 
     fun shouldUpdateTintColor(): Boolean {
@@ -70,7 +66,7 @@ object DamageTint {
 
     private fun getTintColor(): Int {
         return if (isEnabled()) {
-            argbToAbgr(Color(Config.values.color, true).rgb)
+            argbToAbgr(Color(Config.values.overrideColor, true).rgb)
         } else {
             -1308622593
         }

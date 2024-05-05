@@ -1,6 +1,6 @@
 package com.ebicep.damagetint.mixin;
 
-import com.ebicep.damagetint.DamageTint;
+import com.ebicep.damagetint.config.Config;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.HumanoidModel;
@@ -63,7 +63,7 @@ public class HumanoidArmorLayerMixin {
             String string,
             CallbackInfo ci
     ) {
-        if (damagetint$hurt && DamageTint.INSTANCE.showOnArmor()) {
+        if (damagetint$hurt && Config.INSTANCE.getValues().getShowOnPlayerArmor()) {
             VertexConsumer vertexConsumer = multiBufferSource.getBuffer(RenderType.entityCutoutNoCull(getArmorLocation(armorItem, bl, string)));
             humanoidModel.renderToBuffer(poseStack, vertexConsumer, i, OverlayTexture.RED_OVERLAY_V, f, g, h, 1.0F);
             ci.cancel();

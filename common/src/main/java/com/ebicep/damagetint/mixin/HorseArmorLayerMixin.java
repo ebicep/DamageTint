@@ -1,6 +1,6 @@
 package com.ebicep.damagetint.mixin;
 
-import com.ebicep.damagetint.DamageTint;
+import com.ebicep.damagetint.config.Config;
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.layers.HorseArmorLayer;
@@ -36,7 +36,7 @@ public class HorseArmorLayerMixin {
             )
     )
     public void renderToBuffer(Args args) {
-        if (damagetint$hurt && DamageTint.INSTANCE.showOnArmor()) {
+        if (damagetint$hurt && Config.INSTANCE.getValues().getShowOnHorseArmor()) {
             args.set(3, OverlayTexture.RED_OVERLAY_V);
         }
     }

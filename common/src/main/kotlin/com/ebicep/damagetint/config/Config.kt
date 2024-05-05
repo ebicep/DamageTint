@@ -47,7 +47,7 @@ object Config {
     }
 
     private fun loadValues() {
-        if (values.enabled) {
+        if (values.overrideVanillaColor) {
             DamageTint.updateTintColor = true
         }
     }
@@ -56,16 +56,17 @@ object Config {
 
 @Serializable
 data class ConfigVariables(
-    var showOnArmor: Boolean = true,
+    var showOnPlayerArmor: Boolean = true,
+    var showOnHorseArmor: Boolean = true,
 ) {
-    var enabled: Boolean = true
+    var overrideVanillaColor: Boolean = true
         set(value) {
             if (value != field) {
                 field = value
                 DamageTint.updateTintColor = true
             }
         }
-    var color: Int = Color(255, 0, 0, 178).rgb // -1291911168
+    var overrideColor: Int = Color(255, 0, 0, 178).rgb // -1291911168
         set(value) {
             if (value != field) {
                 field = value

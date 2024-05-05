@@ -28,20 +28,26 @@ object ConfigScreenImpl {
         val entryBuilder: ConfigEntryBuilder = builder.entryBuilder()
         val general = builder.getOrCreateCategory(Component.translatable("damagetint.config.general.title"))
         general.addEntry(
-            entryBuilder.booleanToggle("damagetint.config.enabled", Config.values.enabled)
-            { Config.values.enabled = it }
+            entryBuilder.booleanToggle("damagetint.config.showOnPlayerArmor.enabled", Config.values.showOnPlayerArmor)
+            { Config.values.showOnPlayerArmor = it }
         )
         general.addEntry(
-            entryBuilder.startAlphaColorField(Component.translatable("damagetint.config.color"), Color.ofTransparent(Config.values.color))
-                .setTooltip(Component.translatable("damagetint.config.color.tooltip"))
+            entryBuilder.booleanToggle("damagetint.config.showOnHorseArmor.enabled", Config.values.showOnHorseArmor)
+            { Config.values.showOnHorseArmor = it }
+        )
+        general.addEntry(
+            entryBuilder.booleanToggle("damagetint.config.overrideColorEnabled", Config.values.overrideVanillaColor)
+            { Config.values.overrideVanillaColor = it }
+        )
+        var color = Color.ofTransparent(Config.values.overrideColor)
+        color = Color.ofRGBA(color.red, color.green, color.blue, 255 - color.alpha)
+        general.addEntry(
+            entryBuilder.startAlphaColorField(Component.translatable("damagetint.config.overrideColor"), color)
+                .setTooltip(Component.translatable("damagetint.config.overrideColor.tooltip"))
                 .setAlphaMode(true)
-                .setDefaultValue2 { Color.ofTransparent(Config.values.color) }
-                .setSaveConsumer2 { Config.values.color = it.color }
+                .setDefaultValue2 { color }
+                .setSaveConsumer2 { Config.values.overrideColor = Color.ofRGBA(it.red, it.green, it.blue, 255 - it.alpha).color }
                 .build()
-        )
-        general.addEntry(
-            entryBuilder.booleanToggle("damagetint.config.showOnArmor.enabled", Config.values.showOnArmor)
-            { Config.values.showOnArmor = it }
         )
         return builder.build()
     }

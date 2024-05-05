@@ -1,10 +1,12 @@
 {
   "damagetint.title": "DamageTint",
   "damagetint.config.general.title": "General",
-  "damagetint.config.enabled": "Enabled",
-  "damagetint.config.enabled.tooltip": "Enables/Disables the mod",
-  "damagetint.config.color": "Tint Color",
-  "damagetint.config.color.tooltip": "The color of the tint",
-  "damagetint.config.showOnArmor.enabled": "Show on Armor",
-  "damagetint.config.showOnArmor.enabled.tooltip": "Show the tint on armor"
+  "damagetint.config.showOnPlayerArmor.enabled": "Show on Player Armor",
+  "damagetint.config.showOnPlayerArmor.enabled.tooltip": "Show damage tint on player armor.",
+  "damagetint.config.showOnHorseArmor.enabled": "Show on Horse Armor",
+  "damagetint.config.showOnHorseArmor.enabled.tooltip": "Show damage tint on horse armor.",
+  "damagetint.config.overrideColorEnabled": "Override Vanilla Color",
+  "damagetint.config.overrideColorEnabled.tooltip": "Override the vanilla damage color.",
+  "damagetint.config.overrideColor": "Override Color",
+  "damagetint.config.overrideColor.tooltip": "The color of the overridden damage color."
 }
