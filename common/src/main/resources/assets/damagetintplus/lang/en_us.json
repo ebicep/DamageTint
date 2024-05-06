@@ -1,0 +1,12 @@
+{
+  "damageTintPlus.title": "DamageTintPlus",
+  "damageTintPlus.config.general.title": "General",
+  "damageTintPlus.config.showOnPlayerArmor.enabled": "Show on Player Armor",
+  "damageTintPlus.config.showOnPlayerArmor.enabled.tooltip": "Show damage tint on player armor.",
+  "damageTintPlus.config.showOnHorseArmor.enabled": "Show on Horse Armor",
+  "damageTintPlus.config.showOnHorseArmor.enabled.tooltip": "Show damage tint on horse armor.",
+  "damageTintPlus.config.overrideColorEnabled": "Override Vanilla Color",
+  "damageTintPlus.config.overrideColorEnabled.tooltip": "Override the vanilla damage color.",
+  "damageTintPlus.config.overrideColor": "Override Color",
+  "damageTintPlus.config.overrideColor.tooltip": "The color of the overridden damage color."
+}

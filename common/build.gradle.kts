@@ -3,7 +3,7 @@ architectury {
 }
 
 loom {
-    accessWidenerPath.set(file("src/main/resources/damagetint.accesswidener"))
+    accessWidenerPath.set(file("src/main/resources/damagetintplus.accesswidener"))
 }
 
 dependencies {

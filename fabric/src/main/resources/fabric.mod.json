@@ -8,9 +8,9 @@
     "${mod_authors}"
   ],
   "contact": {
-    "homepage": "https://github.com/ebicep/DamageTint",
-    "sources": "https://github.com/ebicep/DamageTint",
-    "issues": "https://github.com/ebicep/DamageTint/issues"
+    "homepage": "https://github.com/ebicep/DamageTintPlus",
+    "sources": "https://github.com/ebicep/DamageTintPlus",
+    "issues": "https://github.com/ebicep/DamageTintPlus/issues"
   },
   "license": "GPL-3.0",
   "icon": "",
@@ -19,16 +19,16 @@
     "main": [
       {
         "adapter": "kotlin",
-        "value": "com.ebicep.damagetint.fabric.DamageTintFabric"
+        "value": "com.ebicep.damagetintplus.fabric.DamageTintPlusFabric"
       }
     ],
     "modmenu": [
-      "com.ebicep.damagetint.config.fabric.ModMenuIntegration"
+      "com.ebicep.damagetintplus.config.fabric.ModMenuIntegration"
     ]
   },
   "mixins": [
-    "damagetint.mixins.json",
-    "damagetint-common.mixins.json"
+    "damagetintplus.mixins.json",
+    "damagetintplus-common.mixins.json"
   ],
   "depends": {
     "fabric": "*",
