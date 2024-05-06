@@ -12,7 +12,7 @@ public class MixinGameRenderer {
 
     @Inject(method = "render", at = @At("HEAD"))
     private void render(float f, long l, boolean bl, CallbackInfo ci) {
-        if (DamageTint.INSTANCE.shouldUpdateTintColor()) {
+        if (DamageTint.INSTANCE.getUpdateTintColor()) {
             DamageTint.INSTANCE.resetTintColor();
         }
     }

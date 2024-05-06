@@ -11,13 +11,8 @@ object ConfigScreen {
     fun handleOpenScreen() {
         if (open) {
             open = false
-            openConfigScreen()
+            Minecraft.getInstance().setScreen(getConfigScreen())
         }
-    }
-
-    private fun openConfigScreen() {
-        val screen = getConfigScreen()
-        Minecraft.getInstance().setScreen(screen)
     }
 
     @JvmStatic

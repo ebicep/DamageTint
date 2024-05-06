@@ -8,9 +8,9 @@
     "${mod_authors}"
   ],
   "contact": {
-    "homepage": "",
-    "sources": "",
-    "issues": ""
+    "homepage": "https://github.com/ebicep/DamageTint",
+    "sources": "https://github.com/ebicep/DamageTint",
+    "issues": "https://github.com/ebicep/DamageTint/issues"
   },
   "license": "GPL-3.0",
   "icon": "",
@@ -21,6 +21,9 @@
         "adapter": "kotlin",
         "value": "com.ebicep.damagetint.fabric.DamageTintFabric"
       }
+    ],
+    "modmenu": [
+      "com.ebicep.damagetint.config.fabric.ModMenuIntegration"
     ]
   },
   "mixins": [

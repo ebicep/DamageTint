@@ -52,6 +52,10 @@ allprojects {
     repositories {
         maven { url = uri("https://maven.shedaniel.me/") }
         maven { url = uri("https://maven.terraformersmc.com") }
+        maven {
+            name = "Terraformers"
+            url = uri("https://maven.terraformersmc.com/")
+        }
     }
 
     dependencies {

@@ -4,8 +4,13 @@ import com.ebicep.damagetint.config.Config
 import com.ebicep.damagetint.config.ConfigScreen
 import com.mojang.blaze3d.platform.NativeImage
 import com.mojang.blaze3d.systems.RenderSystem
+import com.mojang.blaze3d.vertex.DefaultVertexFormat
+import com.mojang.blaze3d.vertex.VertexFormat
 import dev.architectury.event.events.client.ClientTickEvent
 import net.minecraft.client.Minecraft
+import net.minecraft.client.renderer.RenderStateShard
+import net.minecraft.client.renderer.RenderType
+import net.minecraft.resources.ResourceLocation
 import org.apache.logging.log4j.LogManager
 import org.apache.logging.log4j.Logger
 import java.awt.Color
@@ -25,12 +30,26 @@ object DamageTint {
         }
     }
 
-    private fun isEnabled(): Boolean {
-        return Config.values.overrideVanillaColor
-    }
-
-    fun shouldUpdateTintColor(): Boolean {
-        return updateTintColor
+    fun getOverrideRenderType(resourceLocation: ResourceLocation): RenderType.CompositeRenderType {
+        return RenderType.create(
+            "damagetint_override",
+            DefaultVertexFormat.NEW_ENTITY,
+            VertexFormat.Mode.QUADS,
+            256,
+            true,
+            false,
+            RenderType.CompositeState
+                .builder()
+                .setShaderState(RenderStateShard.RENDERTYPE_ENTITY_CUTOUT_NO_CULL_SHADER)
+                .setTextureState(RenderStateShard.TextureStateShard(resourceLocation, false, false))
+                .setTransparencyState(RenderStateShard.NO_TRANSPARENCY)
+                .setCullState(RenderStateShard.NO_CULL)
+                .setLightmapState(RenderStateShard.LIGHTMAP)
+                .setOverlayState(RenderStateShard.OVERLAY)
+                .setLayeringState(RenderStateShard.VIEW_OFFSET_Z_LAYERING)
+                .setDepthTestState(RenderStateShard.LEQUAL_DEPTH_TEST)
+                .createCompositeState(true)
+        )
     }
 
     fun resetTintColor() {
@@ -65,7 +84,7 @@ object DamageTint {
     }
 
     private fun getTintColor(): Int {
-        return if (isEnabled()) {
+        return if (Config.values.overrideVanillaColor) {
             argbToAbgr(Color(Config.values.overrideColor, true).rgb)
         } else {
             -1308622593
