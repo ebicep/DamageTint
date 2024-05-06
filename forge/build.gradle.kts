@@ -14,8 +14,8 @@ loom {
         convertAccessWideners.set(true)
         extraAccessWideners.add(loom.accessWidenerPath.get().asFile.name)
 
-        mixinConfig("mod-common.mixins.json")
-        mixinConfig("mod.mixins.json")
+        mixinConfig("damagetintplus-common.mixins.json")
+        mixinConfig("damagetintplus.mixins.json")
     }
 }
 

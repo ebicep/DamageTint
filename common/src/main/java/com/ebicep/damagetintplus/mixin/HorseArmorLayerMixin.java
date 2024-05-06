@@ -10,9 +10,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyArgs;
+import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 
 @Mixin(HorseArmorLayer.class)
 public class HorseArmorLayerMixin {
@@ -28,17 +27,19 @@ public class HorseArmorLayerMixin {
         damagetintplus$hurt = horse.hurtTime > 0;
     }
 
-    @ModifyArgs(
+    @ModifyArg(
             method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/animal/horse/Horse;FFFFFF)V",
             at = @At(
                     value = "INVOKE",
                     target = "Lnet/minecraft/client/model/HorseModel;renderToBuffer(Lcom/mojang/blaze3d/vertex/PoseStack;Lcom/mojang/blaze3d/vertex/VertexConsumer;IIFFFF)V"
-            )
+            ),
+            index = 3
     )
-    public void renderToBuffer(Args args) {
+    public int renderToBuffer(int i) {
         if (damagetintplus$hurt && Config.INSTANCE.getValues().getShowOnHorseArmor()) {
-            args.set(3, OverlayTexture.RED_OVERLAY_V);
+            return OverlayTexture.RED_OVERLAY_V;
         }
+        return i;
     }
 
 

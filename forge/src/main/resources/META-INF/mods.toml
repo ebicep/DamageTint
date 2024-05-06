@@ -1,6 +1,6 @@
 modLoader = "kotlinforforge"
 loaderVersion = "[4,)"
-issueTrackerURL = "/"
+issueTrackerURL = "https://github.com/ebicep/DamageTintPlus/issues"
 license = "GPL-3.0"
 
 [[mods]]
