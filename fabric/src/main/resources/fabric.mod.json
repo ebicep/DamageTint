@@ -13,7 +13,7 @@
     "issues": "https://github.com/ebicep/DamageTintPlus/issues"
   },
   "license": "GPL-3.0",
-  "icon": "",
+  "icon": "icon.png",
   "environment": "client",
   "entrypoints": {
     "main": [
