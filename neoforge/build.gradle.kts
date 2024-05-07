@@ -36,7 +36,7 @@ dependencies {
     neoForge("net.neoforged:neoforge:${rootProject.property("neoforge_version")}")
     // Remove the next line if you don't want to depend on the API
     modApi("dev.architectury:architectury-neoforge:${rootProject.property("architectury_version")}")
-    modApi("me.shedaniel.cloth:cloth-config-neoforge:12.0.119")
+    modApi("me.shedaniel.cloth:cloth-config-neoforge:${rootProject.property("cloth_config_version")}")
 
     common(project(":common", "namedElements")) { isTransitive = false }
     shadowCommon(project(":common", "transformProductionForge")) { isTransitive = false }
