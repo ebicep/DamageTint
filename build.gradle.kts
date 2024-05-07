@@ -31,9 +31,7 @@ subprojects {
 
     dependencies {
         "minecraft"("com.mojang:minecraft:${project.property("minecraft_version")}")
-        "mappings"(
-            loom.officialMojangMappings()
-        )
+        "mappings"(loom.officialMojangMappings())
     }
 }
 

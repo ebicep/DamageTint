@@ -27,7 +27,7 @@ public class HumanoidArmorLayerMixin {
 
     @Inject(
             method = "renderArmorPiece",
-            at = @At(value = "HEAD")
+            at = @At("HEAD")
     )
     public void renderArmorPiece(
             PoseStack poseStack,
@@ -44,8 +44,7 @@ public class HumanoidArmorLayerMixin {
     @Inject(
             method = "renderModel(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/item/ArmorItem;Lnet/minecraft/client/model/Model;ZFFFLnet/minecraft/resources/ResourceLocation;)V",
             at = @At("HEAD"),
-            cancellable = true,
-            remap = false
+            cancellable = true
     )
     public void renderModel(
             PoseStack poseStack,

@@ -21,7 +21,7 @@ public class HorseArmorLayerMixin {
 
     @Inject(
             method = "render(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/entity/animal/horse/Horse;FFFFFF)V",
-            at = @At(value = "HEAD")
+            at = @At("HEAD")
     )
     public void render(PoseStack poseStack, MultiBufferSource multiBufferSource, int i, Horse horse, float f, float g, float h, float j, float k, float l, CallbackInfo ci) {
         damagetintplus$hurt = horse.hurtTime > 0;

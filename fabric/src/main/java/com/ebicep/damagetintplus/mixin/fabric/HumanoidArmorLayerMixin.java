@@ -1,4 +1,4 @@
-package com.ebicep.damagetintplus.mixin;
+package com.ebicep.damagetintplus.mixin.fabric;
 
 import com.ebicep.damagetintplus.DamageTintPlus;
 import com.ebicep.damagetintplus.config.Config;
@@ -45,7 +45,7 @@ public class HumanoidArmorLayerMixin {
 
     @Inject(
             method = "renderArmorPiece",
-            at = @At(value = "HEAD")
+            at = @At("HEAD")
     )
     public void renderArmorPiece(
             PoseStack poseStack,
@@ -109,6 +109,5 @@ public class HumanoidArmorLayerMixin {
             ci.cancel();
         }
     }
-
 
 }
