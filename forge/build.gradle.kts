@@ -64,6 +64,7 @@ tasks.processResources {
                 "minecraft_version" to rootProject.property("minecraft_version"),
                 "architectury_version" to rootProject.property("architectury_version"),
                 "kotlin_for_forge_version" to rootProject.property("kotlin_for_forge_version"),
+                "cloth_config_version" to rootProject.property("cloth_config_version"),
                 "mod_name" to rootProject.property("mod_name"),
                 "mod_description" to rootProject.property("mod_description"),
                 "mod_authors" to rootProject.property("mod_authors"),

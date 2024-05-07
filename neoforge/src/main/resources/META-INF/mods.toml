@@ -43,3 +43,10 @@ mandatory = true
 versionRange = "[${kotlin_for_forge_version}]"
 ordering = "AFTER"
 side = "BOTH"
+
+[[dependencies.${ mod_id }]]
+modId = "cloth_config"
+mandatory = true
+versionRange = "[${cloth_config_version},)"
+ordering = "AFTER"
+side = "BOTH"
