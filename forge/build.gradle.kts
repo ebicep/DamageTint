@@ -48,6 +48,12 @@ dependencies {
 
     // Kotlin For Forge
     implementation("thedarkcolour:kotlinforforge:${rootProject.property("kotlin_for_forge_version")}")
+
+    // mixin extras
+    annotationProcessor("io.github.llamalad7:mixinextras-common:0.3.6")
+    compileOnly("io.github.llamalad7:mixinextras-common:0.3.6")
+    implementation("io.github.llamalad7:mixinextras-common:0.3.6")
+    include("io.github.llamalad7:mixinextras-forge:0.3.6")
 }
 
 tasks.processResources {

@@ -59,6 +59,7 @@ allprojects {
     dependencies {
         compileOnly("org.jetbrains.kotlin:kotlin-stdlib")
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+        compileOnly("io.github.llamalad7:mixinextras-common:0.3.6")
     }
 
     tasks.withType<JavaCompile> {
