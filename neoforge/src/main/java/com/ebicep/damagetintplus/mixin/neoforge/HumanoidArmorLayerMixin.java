@@ -42,7 +42,7 @@ public class HumanoidArmorLayerMixin {
     }
 
     @Inject(
-            method = "renderModel(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/world/item/ArmorItem;Lnet/minecraft/client/model/Model;ZFFFLnet/minecraft/resources/ResourceLocation;)V",
+            method = "renderModel(Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;ILnet/minecraft/client/model/Model;FFFLnet/minecraft/resources/ResourceLocation;)V",
             at = @At("HEAD"),
             cancellable = true
     )
@@ -50,18 +50,16 @@ public class HumanoidArmorLayerMixin {
             PoseStack poseStack,
             MultiBufferSource multiBufferSource,
             int i,
-            ArmorItem arg3,
-            Model humanoidModel,
-            boolean bl,
+            Model model,
             float f,
             float g,
             float h,
-            ResourceLocation armorResource,
+            ResourceLocation resourceLocation,
             CallbackInfo ci
     ) {
         if (damagetintplus$hurt && Config.INSTANCE.getValues().getShowOnPlayerArmor()) {
-            VertexConsumer vertexConsumer = multiBufferSource.getBuffer(DamageTintPlus.INSTANCE.getOverrideRenderType(armorResource));
-            humanoidModel.renderToBuffer(poseStack, vertexConsumer, i, OverlayTexture.RED_OVERLAY_V, f, g, h, 1.0F);
+            VertexConsumer vertexConsumer = multiBufferSource.getBuffer(DamageTintPlus.INSTANCE.getOverrideRenderType(resourceLocation));
+            model.renderToBuffer(poseStack, vertexConsumer, i, OverlayTexture.RED_OVERLAY_V, f, g, h, 1.0F);
             ci.cancel();
         }
     }
