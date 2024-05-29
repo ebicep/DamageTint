@@ -17,6 +17,7 @@ plugins {
     id("architectury-plugin") version "3.4-SNAPSHOT"
     id("dev.architectury.loom") version "1.6-SNAPSHOT" apply false
     id("com.github.johnrengelman.shadow") version "8.1.1" apply false
+    id("me.shedaniel.unified-publishing") version "0.1.+" apply false
 }
 
 architectury {
@@ -41,6 +42,7 @@ allprojects {
     apply(plugin = "java")
     apply(plugin = "architectury-plugin")
     apply(plugin = "maven-publish")
+    apply(plugin = "me.shedaniel.unified-publishing")
 
     base.archivesName.set(rootProject.property("archives_base_name").toString())
     //base.archivesBaseName = rootProject.property("archives_base_name").toString()
