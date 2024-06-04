@@ -44,8 +44,7 @@ allprojects {
     apply(plugin = "maven-publish")
     apply(plugin = "me.shedaniel.unified-publishing")
 
-    base.archivesName.set(rootProject.property("archives_base_name").toString())
-    //base.archivesBaseName = rootProject.property("archives_base_name").toString()
+    base.archivesName.set("${rootProject.property("archives_base_name").toString()}-${project.name}")
     version = rootProject.property("mod_version").toString()
     group = rootProject.property("maven_group").toString()
 
